@@ -1,1 +1,0 @@
-export FACEBOOK_APP_SECRET='7517fe9e377e3d5d19d4f6deebdfc8af'

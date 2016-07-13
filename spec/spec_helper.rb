@@ -1,3 +1,4 @@
+require 'web_helper'
 
 RSpec.configure do |config|
 

@@ -30,5 +30,4 @@ Devise.setup do |config|
   config.omniauth :facebook, '1187509614604488', ENV['FACEBOOK_APP_SECRET'],
   callback_url: "http://localhost:3000/users/auth/facebook/callback", scope: "email", display: "popup"
 
-
 end

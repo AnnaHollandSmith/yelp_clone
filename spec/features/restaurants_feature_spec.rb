@@ -36,9 +36,10 @@ feature 'restaurants' do
     end
 
     scenario 'will not allow a signed-out user to create a new restaurant' do
-      sign_up
       visit '/restaurants'
       click_link 'Add a restaurant'
+      expect(page).to have_content 'Log in'
+      expect(current_path).to eq '/users/sign_in'
     end
   end
 
@@ -71,8 +72,8 @@ feature 'restaurants' do
     before { Restaurant.create name: 'KFC', description: 'Deep fried goodness' }
 
     scenario 'let a user edit a restaurant' do
-      visit '/restaurants'
       sign_up
+      visit '/restaurants'
       click_link 'Edit KFC'
       fill_in 'Name', with: 'Kentucky Fried Chicken'
       fill_in 'Description', with: 'Deep fried goodness'

@@ -6,6 +6,7 @@ feature 'reviewing' do
   end
 
   scenario 'allows users to leave a review using a form' do
+    sign_up
     leave_review
     expect(current_path).to eq '/restaurants'
     expect(page).to have_content('so so')
